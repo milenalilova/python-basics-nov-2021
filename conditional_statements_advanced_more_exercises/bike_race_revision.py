@@ -13,6 +13,9 @@ if route_type == "trail":
 elif route_type == "cross-country":
     juniors_tax = 8
     seniors_tax = 9.5
+    if group_count >= 50:
+        juniors_tax -= juniors_tax * 0.25
+        seniors_tax -= seniors_tax * 0.25
 
 elif route_type == "downhill":
     juniors_tax = 12.25
@@ -23,9 +26,6 @@ elif route_type == "road":
     seniors_tax = 21.5
 
 group_tax = juniors_count * juniors_tax + seniors_count * seniors_tax
-
-if group_count >= 50:
-    group_tax -= group_tax * 0.25
 
 expenses = group_tax * 0.05
 
