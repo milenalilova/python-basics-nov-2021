@@ -1,0 +1,1 @@
+vaucher_value=int(input())
